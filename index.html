@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fun Quiz Time!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+        20%, 40%, 60%, 80% { transform: translateX(5px); }
+      }
+      .animate-shake {
+        animation: shake 0.5s ease-in-out;
+      }
+      @keyframes confetti-fall {
+        0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+      }
+      .confetti {
+        animation: confetti-fall 3s linear infinite;
+      }
+      @keyframes star-twinkle {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.5); opacity: 0.5; }
+      }
+      .animate-star-twinkle {
+        animation: star-twinkle 2s ease-in-out infinite;
+      }
+      @keyframes happy-jump {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+      }
+      .animate-happy-jump {
+        animation: happy-jump 0.5s ease-in-out;
+      }
+      @keyframes sad-shake {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(-10deg); }
+        75% { transform: rotate(10deg); }
+      }
+      .animate-sad-shake {
+        animation: sad-shake 0.5s ease-in-out;
+      }
+      @keyframes correct-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+        70% { box-shadow: 0 0 0 20px rgba(74, 222, 128, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+      }
+      .animate-correct-pulse {
+        animation: correct-pulse 1s ease-out;
+      }
+      @keyframes incorrect-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+        70% { box-shadow: 0 0 0 20px rgba(239, 68, 68, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+      }
+      .animate-incorrect-pulse {
+        animation: incorrect-pulse 1s ease-out;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <audio id="background-music" loop>
+        <!-- In a real app, you would source an MP3 file here. -->
+        <!-- e.g., <source src="/background-music.mp3" type="audio/mpeg"> -->
+    </audio>
+    <audio id="correct-sound">
+        <!-- e.g., <source src="/correct.mp3" type="audio/mpeg"> -->
+    </audio>
+    <audio id="incorrect-sound">
+        <!-- e.g., <source src="/incorrect.mp3" type="audio/mpeg"> -->
+    </audio>
+    <audio id="click-sound">
+        <!-- e.g., <source src="/click.mp3" type="audio/mpeg"> -->
+    </audio>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
